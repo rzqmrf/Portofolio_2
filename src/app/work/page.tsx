@@ -15,7 +15,7 @@ const PROJECTS_DATA = [
     category: 'Enterprise',
     desc: 'Logistics dashboard designed for PT ILCS to monitor dispatch schedules and cargo fleet movements in real-time.',
     tech: ['Figma', 'Laravel', 'Tailwind'],
-    image: '/tanos.png',
+    image: '/tanosss.png',
     link: '/work/tanos-erp',
   },
   {

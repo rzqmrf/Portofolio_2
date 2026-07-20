@@ -49,7 +49,7 @@ export default function TanosErpCaseStudy() {
         <div className={styles.heroImage}>
           <div className={styles.imageWrapper}>
             <Image 
-              src="/tanos.png" 
+              src="/tanosss.png" 
               alt="Tanos ERP Case Study Cover" 
               fill 
               style={{ objectFit: 'cover' }} 
