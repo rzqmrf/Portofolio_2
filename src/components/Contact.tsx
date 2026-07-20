@@ -4,9 +4,9 @@ import styles from './Contact.module.css';
 
 const contactLinks = [
   { num: '01', label: 'Email', value: 'rozaqmaruf06@gmail.com', href: 'mailto:rozaqmaruf06@gmail.com' },
-  { num: '02', label: 'LinkedIn', value: 'Muhammad Rozaq Maruf', href: 'https://linkedin.com/in/rozaqmaruf' },
+  { num: '02', label: 'LinkedIn', value: 'Muhammad Rozaq Maruf', href: 'https://www.linkedin.com/in/muhammad-rozaq-ma-ruf-59a88033b?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
   { num: '03', label: 'GitHub', value: 'rzqmrf', href: 'https://github.com/rzqmrf' },
-  { num: '04', label: 'Instagram', value: '@rozaqmaruf', href: 'https://instagram.com/@rozaq.mrf' },
+  { num: '04', label: 'Instagram', value: '@rozaqmaruf', href: 'https://www.instagram.com/rozaq.mrf?igsh=dHg0anl4dm0xcGJw' },
 ];
 
 export default function Contact() {
