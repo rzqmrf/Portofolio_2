@@ -1,0 +1,102 @@
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform-origin: 0%;
+  z-index: 200;
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 24px var(--gutter);
+  transition: all 0.5s var(--ease-out);
+  border-bottom: 1px solid transparent;
+}
+
+.scrolled {
+  background: rgba(6, 6, 8, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-color: var(--border);
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.dot {
+  color: var(--accent);
+}
+
+.links {
+  display: flex;
+  gap: 40px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-mid);
+}
+
+.links a {
+  position: relative;
+  padding: 4px 0;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: var(--text);
+}
+
+.links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent);
+  transition: width 0.4s var(--ease-out);
+}
+
+.links a:hover::after {
+  width: 100%;
+}
+
+.cta {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-mid);
+  border: 1px solid var(--border);
+  padding: 8px 20px;
+  border-radius: 100px;
+  transition: all 0.3s var(--ease-out);
+}
+
+.cta:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .links { display: none; }
+  .cta { display: none; }
+}
