@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import styles from './Contact.module.css';
 
 const contactLinks = [
-  { num: '01', label: 'Email', value: 'hello@rozaqmaruf.com', href: 'mailto:hello@rozaqmaruf.com' },
-  { num: '02', label: 'LinkedIn', value: 'linkedin.com/in/rozaqmaruf', href: 'https://linkedin.com/in/rozaqmaruf' },
-  { num: '03', label: 'GitHub', value: 'github.com/rozaqmaruf', href: 'https://github.com/rozaqmaruf' },
-  { num: '04', label: 'Instagram', value: '@rozaqmaruf', href: 'https://instagram.com/rozaqmaruf' },
+  { num: '01', label: 'Email', value: 'rozaqmaruf06@gmail.com', href: 'mailto:rozaqmaruf06@gmail.com' },
+  { num: '02', label: 'LinkedIn', value: 'Muhammad Rozaq Maruf', href: 'https://linkedin.com/in/rozaqmaruf' },
+  { num: '03', label: 'GitHub', value: 'rzqmrf', href: 'https://github.com/rzqmrf' },
+  { num: '04', label: 'Instagram', value: '@rozaqmaruf', href: 'https://instagram.com/rozaq.mrf' },
 ];
 
 export default function Contact() {

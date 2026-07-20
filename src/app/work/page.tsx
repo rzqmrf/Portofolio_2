@@ -14,7 +14,7 @@ const PROJECTS_DATA = [
     title: 'Tanos ERP',
     category: 'Enterprise',
     desc: 'Logistics dashboard designed for PT ILCS to monitor dispatch schedules and cargo fleet movements in real-time.',
-    tech: ['Figma', 'Laravel', 'Tailwind'],
+    tech: ['Figma', 'Laravel', 'Tailwind', 'MySQL'],
     image: '/tanosss.png',
     link: '/work/tanos-erp',
   },
@@ -32,7 +32,7 @@ const PROJECTS_DATA = [
     id: 'balang',
     num: '03',
     title: 'BALANG',
-    category: 'Mobile UX',
+    category: 'Mobile',
     desc: 'A community mobile application to report and map lost and found items in Indonesian neighborhoods.',
     tech: ['Figma', 'Mobile UX', 'Product Design'],
     image: '/balang.jpg',
@@ -44,13 +44,13 @@ const PROJECTS_DATA = [
     title: 'Monitoring Toren',
     category: 'IoT',
     desc: 'Water level indicator dashboard with ultrasonic sensor readings and hardware status logs.',
-    tech: ['Figma', 'Node.js', 'Hardware'],
+    tech: ['Figma', 'PHP Native', 'Hardware'],
     image: '/toren.png',
     link: '#',
   },
 ];
 
-const categories = ['All', 'Enterprise', 'Web App', 'Mobile UX', 'IoT'];
+const categories = ['All', 'Enterprise', 'Web App', 'Mobile', 'IoT'];
 
 export default function WorkPage() {
   const [filter, setFilter] = useState('All');
