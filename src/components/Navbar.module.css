@@ -1,102 +1,144 @@
-.progressBar {
+.navContainer {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: var(--accent);
-  transform-origin: 0%;
-  z-index: 200;
-}
-
-.nav {
-  position: fixed;
-  top: 0;
+  top: 24px;
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 24px var(--gutter);
-  transition: all 0.5s var(--ease-out);
-  border-bottom: 1px solid transparent;
+  display: flex;
+  justify-content: center;
+  padding: 0 var(--gutter);
+  pointer-events: none; /* Let clicks pass through container */
+  transition: top 0.4s var(--ease-out);
 }
 
-.scrolled {
-  background: rgba(6, 6, 8, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-color: var(--border);
-  padding-top: 16px;
-  padding-bottom: 16px;
+.scrolledContainer {
+  top: 16px;
 }
 
-.inner {
-  max-width: var(--max-w);
-  margin: 0 auto;
+.navPill {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  background: color-mix(in srgb, var(--bg-elevated) 65%, transparent);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 6px 6px 6px 20px;
+  gap: 28px;
+  box-shadow: 
+    0 20px 40px -10px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.02);
+  pointer-events: auto; /* Re-enable clicks inside pill */
+  transition: all 0.4s var(--ease-out);
 }
 
 .logo {
   font-family: var(--mono);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 700;
+  color: var(--text);
   letter-spacing: -0.02em;
 }
 
-.dot {
+.logo span {
   color: var(--accent);
+}
+
+.linksWrapper {
+  display: flex;
 }
 
 .links {
   display: flex;
-  gap: 40px;
-  font-size: 14px;
-  font-weight: 400;
-  color: var(--text-mid);
-}
-
-.links a {
+  align-items: center;
   position: relative;
-  padding: 4px 0;
-  transition: color 0.3s ease;
+  gap: 4px;
 }
 
-.links a:hover {
-  color: var(--text);
-}
-
-.links a::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: var(--accent);
-  transition: width 0.4s var(--ease-out);
-}
-
-.links a:hover::after {
-  width: 100%;
-}
-
-.cta {
+.navLink {
+  position: relative;
   font-size: 13px;
   font-weight: 500;
   color: var(--text-mid);
-  border: 1px solid var(--border);
-  padding: 8px 20px;
+  padding: 8px 16px;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 100px;
-  transition: all 0.3s var(--ease-out);
 }
 
-.cta:hover {
+.navLink:hover {
   color: var(--text);
-  border-color: var(--text);
 }
 
-@media (max-width: 768px) {
-  .links { display: none; }
-  .cta { display: none; }
+.activeLink {
+  color: var(--text);
+}
+
+.hoverBg {
+  position: absolute;
+  inset: 0;
+  background: color-mix(in srgb, var(--text) 6%, transparent);
+  border-radius: 100px;
+  z-index: -1;
+}
+
+.activeDot {
+  position: absolute;
+  bottom: 0px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.rightGroup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Theme Switcher Styles */
+.themeSwitcher {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  padding: 2px;
+  background: color-mix(in srgb, var(--text) 3%, transparent);
+}
+
+.themeBtn {
+  font-size: 12px;
+  color: var(--text-muted);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s var(--ease-out);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.themeBtn:hover {
+  color: var(--text);
+}
+
+.activeTheme {
+  background: var(--text);
+  color: var(--bg);
+}
+
+@media (max-width: 600px) {
+  .navPill {
+    padding: 6px 6px 6px 16px;
+    gap: 16px;
+  }
+  
+  .navLink {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
 }

@@ -52,7 +52,7 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.9, duration: 0.8 }}
         >
-          UI/UX Designer & Frontend Developer
+          UI/UX & Frontend Developer
         </motion.p>
 
         <motion.div

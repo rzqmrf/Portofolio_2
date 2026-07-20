@@ -27,8 +27,8 @@ export default function EReservCaseStudy() {
 
             <div className={styles.metaGrid}>
               <div className={styles.metaItem}>
-                <span className={styles.metaLabel}>CLIENT</span>
-                <span className={styles.metaVal}>PT ILCS Internal Project</span>
+                <span className={styles.metaLabel}>PROJECT TYPE</span>
+                <span className={styles.metaVal}>Academic Project (EEPIS Surabaya)</span>
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>ROLE</span>
@@ -36,7 +36,7 @@ export default function EReservCaseStudy() {
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>TIMELINE</span>
-                <span className={styles.metaVal}>2 Months</span>
+                <span className={styles.metaVal}>3 Months</span>
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>STACK</span>

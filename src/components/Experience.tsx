@@ -4,22 +4,16 @@ import styles from './Experience.module.css';
 
 const timeline = [
   {
-    period: 'Feb 2025 — Present',
+    period: 'Juni 2026 — Present',
     role: 'UI/UX Design Intern',
-    company: 'PT ILCS',
+    company: 'PT Integrasi Logistik Cipta Solusi',
     desc: 'Redesigning enterprise logistics dashboards (Tanos ERP) for port freight coordination — from user research to hi-fi prototypes shipped in production.',
   },
   {
-    period: '2022 — Present',
+    period: 'August 2024 — Present',
     role: 'Informatics Engineering',
     company: 'EEPIS Surabaya',
     desc: 'Studying software engineering, database systems, HCI, and building various academic projects in web & IoT.',
-  },
-  {
-    period: '2024',
-    role: 'Fullstack Developer',
-    company: 'E-Reserv Project',
-    desc: 'Built a facility booking system end-to-end: designed the UI, wrote the backend in PHP/MySQL, and deployed for campus use.',
   },
 ];
 
