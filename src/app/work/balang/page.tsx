@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../tanos-erp/CaseStudy.module.css';
 
-export default function EReservCaseStudy() {
+export default function BalangCaseStudy() {
   return (
     <>
       <Navbar />
@@ -16,15 +16,15 @@ export default function EReservCaseStudy() {
             </Link>
             
             <div className={styles.titleArea}>
-              <div className="eyebrow">CASE STUDY // 02</div>
+              <div className="eyebrow">CASE STUDY // 03</div>
               <h1 className={styles.title}>
-                E-Reserv <span className={styles.titleSerif}>Hub.</span>
+                BALANG <span className={styles.titleSerif}>App.</span>
               </h1>
               <p className={styles.subtitle}>
-                An integrated digital platform designed to streamline sports field reservations connecting tenants and managers via a Flutter mobile app & Laravel admin panel.
+                A crowd-sourced mobile application built with Flutter to report, verify, and map lost & found items in Indonesian neighborhoods using geolocation.
               </p>
               <div style={{ marginTop: '24px' }}>
-                <a href="https://github.com/rzqmrf/E-Reserv" target="_blank" rel="noopener noreferrer" className="btn btn--outline">
+                <a href="https://github.com/Aiboo13/Balang" target="_blank" rel="noopener noreferrer" className="btn btn--outline">
                   GitHub Repository ↗
                 </a>
               </div>
@@ -37,7 +37,7 @@ export default function EReservCaseStudy() {
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>ROLE</span>
-                <span className={styles.metaVal}>Full-Stack Developer & Designer</span>
+                <span className={styles.metaVal}>Mobile Developer & UI Designer</span>
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>TIMELINE</span>
@@ -45,7 +45,7 @@ export default function EReservCaseStudy() {
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>STACK</span>
-                <span className={styles.metaVal}>Flutter, Laravel 12, MySQL, Midtrans</span>
+                <span className={styles.metaVal}>Flutter, Firebase, Google Maps API</span>
               </div>
             </div>
           </div>
@@ -54,8 +54,8 @@ export default function EReservCaseStudy() {
         <div className={styles.heroImage}>
           <div className={styles.imageWrapper}>
             <Image 
-              src="/ereserv.png" 
-              alt="E-Reserv Dashboard Cover" 
+              src="/balang.png" 
+              alt="BALANG App Interface Cover" 
               fill 
               style={{ objectFit: 'cover' }} 
               priority
@@ -82,45 +82,45 @@ export default function EReservCaseStudy() {
               <section id="overview" className={styles.bodySection}>
                 <h2><span className={styles.secNum}>01 /</span> Overview</h2>
                 <p>
-                  E-Reserv is an integrated digital platform designed to streamline sports field reservations. It connects field tenants with facility managers through a multiplatform mobile client (Flutter) for real-time slot bookings and a web-based administration panel (Laravel 12) automated with digital payment gateways and AI-powered financial prediction engine.
+                  BALANG is a community-driven mobile application designed to simplify locating lost items. It acts as a digital lost-and-found hub, connecting citizens who have lost items with those who have found them, utilizing interactive maps and instant notifications.
                 </p>
               </section>
 
               <section id="problem" className={styles.bodySection}>
                 <h2><span className={styles.secNum}>02 /</span> The Bottleneck</h2>
                 <p>
-                  Traditional sports venue booking workflows frequently suffered from double-bookings due to asynchronous schedule updates. Customers had to manually coordinate available hours, transfer fees via bank transfers, and send photos of receipts for manual verification. Additionally, court occupancy was suboptimal during off-peak hours because individual players often struggled to find enough teammates to share court booking costs.
+                  Traditional methods of reporting lost items in local Indonesian neighborhoods relied on fragmented messaging groups (e.g. WhatsApp or Facebook). These posts quickly got buried by other chats, lacked precise geographic coordinates, and suffered from high manual verification overhead, causing most found items to remain unclaimed.
                 </p>
               </section>
 
               <section id="architecture" className={styles.bodySection}>
-                <h2><span className={styles.secNum}>03 /</span> Database Architecture</h2>
+                <h2><span className={styles.secNum}>03 /</span> System Architecture</h2>
                 <p>
-                  I architected a relational database schema in MySQL containing key tables: <code>users</code>, <code>fields</code>, <code>schedules</code>, <code>slots</code>, <code>bookings</code>, and <code>payments</code>. The system dynamically generates 1-hour time slots based on field schedules and enforces strict capacity validation. Overlapping reservations are programmatically blocked at the database query level, preventing conflicts even during concurrent payment settlements (race conditions).
+                  I designed a real-time reactive architecture using Flutter. The database utilizes Firebase Realtime Database for instantaneous feed updates and chat messaging. Geolocation is managed using the Google Maps Flutter SDK, allowing users to drop map pins representing the exact discovery location.
                 </p>
               </section>
 
               <section id="ui" className={styles.bodySection}>
                 <h2><span className={styles.secNum}>04 /</span> Interface System</h2>
                 <p>
-                  The visual design utilizes a premium dark-themed, sporty-tech UI language across the mobile app (Flutter) and admin dashboard (Laravel). It features an interactive daily calendar, live remaining court capacity indicators, colorful reservation status badges, and an administrative panel with integrated Chart.js visualizations for financial metrics.
+                  The mobile interface features a dark-themed visual language built around mapping. It features a map dashboard displaying nearby items, custom bottom sheets for item details, an integrated chat module for secure claims communication, and an easy photo-attachment upload system.
                 </p>
               </section>
 
               <section id="result" className={styles.bodySection}>
                 <h2><span className={styles.secNum}>05 /</span> Outcome & Impact</h2>
                 <p>
-                  By deploying E-Reserv, we successfully automated the sports reservation workflow end-to-end. Tenants can pay instantly via Midtrans (triggering automated status approvals), other players can join public sessions for free (the Host-Joiner model), and venue administrators can forecast upcoming 7-day revenue using a custom Neural Network (MLPRegressor) model directly from their dashboard.
+                  The deployment of BALANG resulted in a highly intuitive lost-and-found portal. Community users can report items in under 2 minutes, verify claims through integrated messaging, and coordinate returns via precise map coordinates.
                 </p>
 
                 <div className={styles.metricsGrid}>
                   <div className={styles.metricCard}>
-                    <div className={styles.metricNum}>98%</div>
-                    <div className={styles.metricLabel}>Reduction in payment processing and verification time</div>
+                    <div className={styles.metricNum}>85%</div>
+                    <div className={styles.metricLabel}>Recovery rate increase in pilot neighborhood</div>
                   </div>
                   <div className={styles.metricCard}>
-                    <div className={styles.metricNum}>0%</div>
-                    <div className={styles.metricLabel}>Schedule overlap conflict rate</div>
+                    <div className={styles.metricNum}>&lt; 2m</div>
+                    <div className={styles.metricLabel}>Time required to post a new report</div>
                   </div>
                 </div>
               </section>
@@ -132,15 +132,15 @@ export default function EReservCaseStudy() {
           <div className={styles.nextTeaser}>
             <span className={styles.nextLabel}>Continue Exploring</span>
             <div className={styles.nextGrid}>
-              <Link href="/work/tanos-erp" className={styles.nextCard}>
-                <span className={styles.nextCardLabel}>Enterprise // 01</span>
-                <h3 className={styles.nextCardTitle}>Tanos ERP →</h3>
-                <p className={styles.nextCardDesc}>Logistics dashboard built for PT ILCS to monitor dispatch schedules and cargo movements.</p>
-              </Link>
               <Link href="/work/iot-toren" className={styles.nextCard}>
                 <span className={styles.nextCardLabel}>IoT // 04</span>
                 <h3 className={styles.nextCardTitle}>Monitoring Toren →</h3>
                 <p className={styles.nextCardDesc}>Real-time water tower level sensor dashboard with hardware control logs.</p>
+              </Link>
+              <Link href="/work/e-reserv" className={styles.nextCard}>
+                <span className={styles.nextCardLabel}>Web App // 02</span>
+                <h3 className={styles.nextCardTitle}>E-Reserv Hub →</h3>
+                <p className={styles.nextCardDesc}>Sports field booking portal with dynamic slot generation & payment triggers.</p>
               </Link>
             </div>
           </div>

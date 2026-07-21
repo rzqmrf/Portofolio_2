@@ -4,7 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from '../tanos-erp/CaseStudy.module.css';
 
-export default function EReservCaseStudy() {
+export default function MonitoringTorenCaseStudy() {
   return (
     <>
       <Navbar />
@@ -16,15 +16,15 @@ export default function EReservCaseStudy() {
             </Link>
             
             <div className={styles.titleArea}>
-              <div className="eyebrow">CASE STUDY // 02</div>
+              <div className="eyebrow">CASE STUDY // 04</div>
               <h1 className={styles.title}>
-                E-Reserv <span className={styles.titleSerif}>Hub.</span>
+                Monitoring <span className={styles.titleSerif}>Toren.</span>
               </h1>
               <p className={styles.subtitle}>
-                An integrated digital platform designed to streamline sports field reservations connecting tenants and managers via a Flutter mobile app & Laravel admin panel.
+                An IoT dashboard and hardware system utilizing ultrasonic sensors to monitor water tower levels, trigger automated pumps, and log real-time consumption data.
               </p>
               <div style={{ marginTop: '24px' }}>
-                <a href="https://github.com/rzqmrf/E-Reserv" target="_blank" rel="noopener noreferrer" className="btn btn--outline">
+                <a href="https://github.com/rzqmrf/monitoring_IOT" target="_blank" rel="noopener noreferrer" className="btn btn--outline">
                   GitHub Repository ↗
                 </a>
               </div>
@@ -37,15 +37,15 @@ export default function EReservCaseStudy() {
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>ROLE</span>
-                <span className={styles.metaVal}>Full-Stack Developer & Designer</span>
+                <span className={styles.metaVal}>IoT Developer & Dashboard Designer</span>
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>TIMELINE</span>
-                <span className={styles.metaVal}>3 Months</span>
+                <span className={styles.metaVal}>2 Months</span>
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>STACK</span>
-                <span className={styles.metaVal}>Flutter, Laravel 12, MySQL, Midtrans</span>
+                <span className={styles.metaVal}>Arduino, ESP8266, PHP Native, MySQL</span>
               </div>
             </div>
           </div>
@@ -54,8 +54,8 @@ export default function EReservCaseStudy() {
         <div className={styles.heroImage}>
           <div className={styles.imageWrapper}>
             <Image 
-              src="/ereserv.png" 
-              alt="E-Reserv Dashboard Cover" 
+              src="/dashboard.png" 
+              alt="Water level indicator dashboard" 
               fill 
               style={{ objectFit: 'cover' }} 
               priority
@@ -82,45 +82,45 @@ export default function EReservCaseStudy() {
               <section id="overview" className={styles.bodySection}>
                 <h2><span className={styles.secNum}>01 /</span> Overview</h2>
                 <p>
-                  E-Reserv is an integrated digital platform designed to streamline sports field reservations. It connects field tenants with facility managers through a multiplatform mobile client (Flutter) for real-time slot bookings and a web-based administration panel (Laravel 12) automated with digital payment gateways and AI-powered financial prediction engine.
+                  Monitoring Toren is an IoT water management platform combining hardware sensors with a web monitoring dashboard. It provides real-time visibility into household water reserve levels, automates water pump control relays, and tracks long-term consumption analytics.
                 </p>
               </section>
 
               <section id="problem" className={styles.bodySection}>
                 <h2><span className={styles.secNum}>02 /</span> The Bottleneck</h2>
                 <p>
-                  Traditional sports venue booking workflows frequently suffered from double-bookings due to asynchronous schedule updates. Customers had to manually coordinate available hours, transfer fees via bank transfers, and send photos of receipts for manual verification. Additionally, court occupancy was suboptimal during off-peak hours because individual players often struggled to find enough teammates to share court booking costs.
+                  Water towers frequently overflowed, wasting clean water, or ran completely dry without prior warning. Checking water levels manually required climbing towers physically, which was dangerous and inefficient. Homeowners lacked visual warnings of leaks or abnormal water usage patterns.
                 </p>
               </section>
 
               <section id="architecture" className={styles.bodySection}>
-                <h2><span className={styles.secNum}>03 /</span> Database Architecture</h2>
+                <h2><span className={styles.secNum}>03 /</span> System Architecture</h2>
                 <p>
-                  I architected a relational database schema in MySQL containing key tables: <code>users</code>, <code>fields</code>, <code>schedules</code>, <code>slots</code>, <code>bookings</code>, and <code>payments</code>. The system dynamically generates 1-hour time slots based on field schedules and enforces strict capacity validation. Overlapping reservations are programmatically blocked at the database query level, preventing conflicts even during concurrent payment settlements (race conditions).
+                  I programmed a NodeMCU ESP8266 microcontroller in C++ using Arduino IDE. The hardware interfaces with an HC-SR04 ultrasonic sensor placed inside the tower, calculating distance to determine water depth. The sensor pushes data via HTTP POST API requests to a PHP Native backend, which writes logs directly into a MySQL database.
                 </p>
               </section>
 
               <section id="ui" className={styles.bodySection}>
-                <h2><span className={styles.secNum}>04 /</span> Interface System</h2>
+                <h2><span className={styles.secNum}>04 /</span> Interface Design</h2>
                 <p>
-                  The visual design utilizes a premium dark-themed, sporty-tech UI language across the mobile app (Flutter) and admin dashboard (Laravel). It features an interactive daily calendar, live remaining court capacity indicators, colorful reservation status badges, and an administrative panel with integrated Chart.js visualizations for financial metrics.
+                  The web dashboard utilizes a Bootstrap-based dark-themed UI. The main display features a real-time wave animation representing the current water percentage level, alongside active logs, network ping metrics, and a dynamic hardware relay switch allowing remote manual pump override.
                 </p>
               </section>
 
               <section id="result" className={styles.bodySection}>
                 <h2><span className={styles.secNum}>05 /</span> Outcome & Impact</h2>
                 <p>
-                  By deploying E-Reserv, we successfully automated the sports reservation workflow end-to-end. Tenants can pay instantly via Midtrans (triggering automated status approvals), other players can join public sessions for free (the Host-Joiner model), and venue administrators can forecast upcoming 7-day revenue using a custom Neural Network (MLPRegressor) model directly from their dashboard.
+                  Deploying the monitoring system completely eliminated manual inspections and water waste. The automated pump triggers instantly when capacity falls below 20%, and the system logs water depth, pump execution duration, and energy efficiency directly to the panel.
                 </p>
 
                 <div className={styles.metricsGrid}>
                   <div className={styles.metricCard}>
-                    <div className={styles.metricNum}>98%</div>
-                    <div className={styles.metricLabel}>Reduction in payment processing and verification time</div>
+                    <div className={styles.metricNum}>100%</div>
+                    <div className={styles.metricLabel}>Elimination of water tower overflow incidents</div>
                   </div>
                   <div className={styles.metricCard}>
-                    <div className={styles.metricNum}>0%</div>
-                    <div className={styles.metricLabel}>Schedule overlap conflict rate</div>
+                    <div className={styles.metricNum}>0</div>
+                    <div className={styles.metricLabel}>Manual physical tower inspections required</div>
                   </div>
                 </div>
               </section>
@@ -137,10 +137,10 @@ export default function EReservCaseStudy() {
                 <h3 className={styles.nextCardTitle}>Tanos ERP →</h3>
                 <p className={styles.nextCardDesc}>Logistics dashboard built for PT ILCS to monitor dispatch schedules and cargo movements.</p>
               </Link>
-              <Link href="/work/iot-toren" className={styles.nextCard}>
-                <span className={styles.nextCardLabel}>IoT // 04</span>
-                <h3 className={styles.nextCardTitle}>Monitoring Toren →</h3>
-                <p className={styles.nextCardDesc}>Real-time water tower level sensor dashboard with hardware control logs.</p>
+              <Link href="/work/balang" className={styles.nextCard}>
+                <span className={styles.nextCardLabel}>Mobile // 03</span>
+                <h3 className={styles.nextCardTitle}>BALANG App →</h3>
+                <p className={styles.nextCardDesc}>Community lost-and-found mobile client built with Flutter & Firebase.</p>
               </Link>
             </div>
           </div>

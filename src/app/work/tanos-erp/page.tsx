@@ -23,6 +23,11 @@ export default function TanosErpCaseStudy() {
               <p className={styles.subtitle}>
                 An enterprise dispatch planning application designed to coordinate fleet movements and order logistics under a single dashboard interface.
               </p>
+              <div style={{ marginTop: '24px' }}>
+                <a href="https://github.com/rzqmrf/Tanos" target="_blank" rel="noopener noreferrer" className="btn btn--outline">
+                  GitHub Repository ↗
+                </a>
+              </div>
             </div>
 
             <div className={styles.metaGrid}>
@@ -133,10 +138,19 @@ export default function TanosErpCaseStudy() {
 
         <div className="wrap">
           <div className={styles.nextTeaser}>
-            <span className={styles.nextLabel}>Next Project</span>
-            <Link href="/work/e-reserv" className={styles.nextTitle}>
-              E-Reserv Hub →
-            </Link>
+            <span className={styles.nextLabel}>Continue Exploring</span>
+            <div className={styles.nextGrid}>
+              <Link href="/work/e-reserv" className={styles.nextCard}>
+                <span className={styles.nextCardLabel}>Web App // 02</span>
+                <h3 className={styles.nextCardTitle}>E-Reserv Hub →</h3>
+                <p className={styles.nextCardDesc}>Sports field booking portal with dynamic slot generation & payment triggers.</p>
+              </Link>
+              <Link href="/work/balang" className={styles.nextCard}>
+                <span className={styles.nextCardLabel}>Mobile // 03</span>
+                <h3 className={styles.nextCardTitle}>BALANG App →</h3>
+                <p className={styles.nextCardDesc}>Community lost-and-found mobile client built with Flutter & Firebase.</p>
+              </Link>
+            </div>
           </div>
         </div>
       </article>

@@ -241,7 +241,6 @@
   border-top: 1px solid var(--border);
   margin-top: 120px;
   padding-top: 80px;
-  text-align: center;
 }
 
 .nextLabel {
@@ -250,22 +249,56 @@
   color: var(--text-muted);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  margin-bottom: 16px;
-  display: block;
-}
-
-.nextTitle {
-  font-size: clamp(36px, 6vw, 64px);
-  font-weight: 800;
-  letter-spacing: -0.04em;
-  color: var(--text);
-  transition: color 0.3s ease;
-  display: inline-block;
   margin-bottom: 24px;
+  display: block;
+  text-align: center;
 }
 
-.nextTitle:hover {
+.nextGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.nextCard {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  transition: border-color 0.3s ease, transform 0.3s var(--ease-out), box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.nextCard:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+}
+
+.nextCardLabel {
+  font-family: var(--mono);
+  font-size: 10px;
   color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.nextCardTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.nextCardDesc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  font-weight: 300;
 }
 
 @media (max-width: 1024px) {
@@ -299,5 +332,12 @@
   }
   .metricsGrid {
     grid-template-columns: 1fr;
+  }
+  .nextGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .nextCard {
+    padding: 24px 20px;
   }
 }

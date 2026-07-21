@@ -36,7 +36,7 @@ const PROJECTS_DATA = [
     desc: 'A crowd-sourced mobile application built with Flutter to report, verify, and map lost & found items in Indonesian neighborhoods using geolocation.',
     tech: ['Flutter', 'Firebase', 'Google Maps API', 'Figma'],
     image: '/balang.png',
-    link: 'https://github.com/rzqmrf/balang', // Placeholder: change to actual URL
+    link: '/work/balang',
   },
   {
     id: 'iot-toren',
@@ -46,7 +46,7 @@ const PROJECTS_DATA = [
     desc: 'An IoT dashboard and hardware system utilizing ultrasonic sensors to monitor water tower levels, trigger automated pumps, and log real-time consumption data.',
     tech: ['Arduino', 'ESP8266', 'PHP Native', 'MySQL', 'Bootstrap'],
     image: '/dashboard.png',
-    link: 'https://github.com/rzqmrf/monitoring-toren', // Placeholder: change to actual URL
+    link: '/work/iot-toren',
   },
 ];
 
@@ -113,16 +113,7 @@ export default function WorkPage() {
                     </div>
                   </div>
                   <div className={styles.rowAction}>
-                    {project.link.startsWith('http') ? (
-                      <a 
-                        href={project.link} 
-                        className="btn btn--outline"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        GitHub ↗
-                      </a>
-                    ) : project.link !== '#' ? (
+                    {project.link !== '#' ? (
                       <Link href={project.link} className="btn btn--outline">
                         Case study →
                       </Link>
