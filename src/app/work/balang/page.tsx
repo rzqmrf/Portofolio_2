@@ -52,12 +52,13 @@ export default function BalangCaseStudy() {
         </header>
 
         <div className={styles.heroImage}>
-          <div className={styles.imageWrapper} style={{ aspectRatio: '1536/1024' }}>
+          <div className={styles.imageWrapper}>
             <Image 
               src="/balang.png" 
               alt="BALANG App Interface Cover" 
-              fill 
-              style={{ objectFit: 'cover' }} 
+              width={1536}
+              height={1024}
+              style={{ width: '100%', height: 'auto', display: 'block' }}
               priority
             />
           </div>

@@ -52,12 +52,13 @@ export default function MonitoringTorenCaseStudy() {
         </header>
 
         <div className={styles.heroImage}>
-          <div className={styles.imageWrapper} style={{ aspectRatio: '705/651' }}>
+          <div className={styles.imageWrapper}>
             <Image 
               src="/dashboard.png" 
               alt="Water level indicator dashboard" 
-              fill 
-              style={{ objectFit: 'cover' }} 
+              width={705}
+              height={651}
+              style={{ width: '100%', height: 'auto', display: 'block' }}
               priority
             />
           </div>

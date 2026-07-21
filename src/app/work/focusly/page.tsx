@@ -52,12 +52,13 @@ export default function FocuslyCaseStudy() {
         </header>
 
         <div className={styles.heroImage}>
-          <div className={styles.imageWrapper} style={{ aspectRatio: '1024/502' }}>
+          <div className={styles.imageWrapper}>
             <Image 
               src="/focusly.png" 
               alt="Focusly Web Application Interface" 
-              fill 
-              style={{ objectFit: 'cover' }} 
+              width={1024}
+              height={502}
+              style={{ width: '100%', height: 'auto', display: 'block' }}
               priority
             />
           </div>

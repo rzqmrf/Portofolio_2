@@ -52,12 +52,13 @@ export default function TanosErpCaseStudy() {
         </header>
 
         <div className={styles.heroImage}>
-          <div className={styles.imageWrapper} style={{ aspectRatio: '1024/682' }}>
+          <div className={styles.imageWrapper}>
             <Image 
               src="/tanosss.png" 
               alt="Tanos ERP Case Study Cover" 
-              fill 
-              style={{ objectFit: 'cover' }} 
+              width={1024}
+              height={682}
+              style={{ width: '100%', height: 'auto', display: 'block' }}
               priority
             />
           </div>
