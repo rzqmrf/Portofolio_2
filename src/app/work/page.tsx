@@ -48,6 +48,16 @@ const PROJECTS_DATA = [
     image: '/dashboard.png',
     link: '/work/iot-toren',
   },
+  {
+    id: 'focusly',
+    num: '05',
+    title: 'Focusly',
+    category: 'Web App',
+    desc: 'A modern, interactive task management web application featuring dark/light mode toggles, automated progress bars, and local storage persistence.',
+    tech: ['HTML5', 'CSS3', 'JavaScript', 'LocalStorage'],
+    image: '/photo-code.jpg',
+    link: '/work/focusly',
+  },
 ];
 
 const categories = ['All', 'Enterprise', 'Web App', 'Mobile', 'IoT'];

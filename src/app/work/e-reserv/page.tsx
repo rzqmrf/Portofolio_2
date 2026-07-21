@@ -52,7 +52,7 @@ export default function EReservCaseStudy() {
         </header>
 
         <div className={styles.heroImage}>
-          <div className={styles.imageWrapper}>
+          <div className={styles.imageWrapper} style={{ aspectRatio: '1536/1024' }}>
             <Image 
               src="/ereserv.png" 
               alt="E-Reserv Dashboard Cover" 
@@ -132,10 +132,10 @@ export default function EReservCaseStudy() {
           <div className={styles.nextTeaser}>
             <span className={styles.nextLabel}>Continue Exploring</span>
             <div className={styles.nextGrid}>
-              <Link href="/work/tanos-erp" className={styles.nextCard}>
-                <span className={styles.nextCardLabel}>Enterprise // 01</span>
-                <h3 className={styles.nextCardTitle}>Tanos ERP →</h3>
-                <p className={styles.nextCardDesc}>Logistics dashboard built for PT ILCS to monitor dispatch schedules and cargo movements.</p>
+              <Link href="/work/balang" className={styles.nextCard}>
+                <span className={styles.nextCardLabel}>Mobile // 03</span>
+                <h3 className={styles.nextCardTitle}>BALANG App →</h3>
+                <p className={styles.nextCardDesc}>Community lost-and-found mobile client built with Flutter & Firebase.</p>
               </Link>
               <Link href="/work/iot-toren" className={styles.nextCard}>
                 <span className={styles.nextCardLabel}>IoT // 04</span>
