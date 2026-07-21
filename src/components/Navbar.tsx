@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import styles from './Navbar.module.css';
 
 const navItems = [
@@ -90,10 +90,18 @@ export default function Navbar() {
               <button
                 key={t.id}
                 onClick={() => selectTheme(t.id)}
-                className={`${styles.themeBtn} ${currentTheme === t.id ? styles.activeTheme : ''}`}
+                className={`${styles.themeBtn} ${currentTheme === t.id ? styles.activeThemeText : ''}`}
                 title={`${t.id} theme`}
+                style={{ position: 'relative' }}
               >
-                {t.icon}
+                <span className={styles.iconLabel}>{t.icon}</span>
+                {currentTheme === t.id && (
+                  <motion.div
+                    layoutId="activeThemeBg"
+                    className={styles.themeActiveBg}
+                    transition={{ type: 'spring', stiffness: 380, damping: 28 }}
+                  />
+                )}
               </button>
             ))}
           </div>

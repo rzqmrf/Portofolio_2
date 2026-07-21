@@ -106,6 +106,8 @@
   border-radius: 100px;
   padding: 2px;
   background: color-mix(in srgb, var(--text) 3%, transparent);
+  position: relative;
+  overflow: hidden;
 }
 
 .themeBtn {
@@ -117,18 +119,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s var(--ease-out);
+  transition: color 0.3s var(--ease-out);
   font-weight: 500;
   line-height: 1;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .themeBtn:hover {
   color: var(--text);
 }
 
-.activeTheme {
+.themeActiveBg {
+  position: absolute;
+  inset: 0;
   background: var(--text);
-  color: var(--bg);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.activeThemeText {
+  color: var(--bg) !important;
+}
+
+.iconLabel {
+  position: relative;
+  z-index: 2;
 }
 
 @media (max-width: 600px) {
