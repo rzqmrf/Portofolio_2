@@ -3,14 +3,14 @@ import { motion } from 'framer-motion';
 import styles from './BehindTheScenes.module.css';
 
 const photos = [
-  { src: '/photo-beach.jpg', caption: 'Sunset vibes', span: 'wide' },
-  { src: '/photo-campus.jpg', caption: 'Campus life', span: 'tall' },
-  { src: '/photo-hiking.jpg', caption: 'Exploring peaks', span: 'normal' },
-  { src: '/photo-river.jpg', caption: 'Chasing waterfalls', span: 'wide' },
-  { src: '/photo-code.jpg', caption: 'Late night code', span: 'normal' },
-  { src: '/photo-class.jpg', caption: 'Presenting ideas', span: 'normal' },
-  { src: '/photo-futsal.jpg', caption: 'Game day', span: 'normal' },
-  { src: '/photo-mall.jpg', caption: 'Off duty', span: 'tall' },
+  { src: '/photo-beach.jpg', caption: 'Sunset vibes', span: 'wide', position: 'center 85%' },
+  { src: '/photo-campus.jpg', caption: 'Campus life', span: 'tall', position: 'center' },
+  { src: '/photo-hiking.jpg', caption: 'Exploring peaks', span: 'normal', position: 'center' },
+  { src: '/photo-river.jpg', caption: 'Chasing waterfalls', span: 'wide', position: 'center 95%' },
+  { src: '/photo-code.jpg', caption: 'Late night code', span: 'normal', position: 'center' },
+  { src: '/photo-class.jpg', caption: 'Presenting ideas', span: 'normal', position: 'center' },
+  { src: '/photo-futsal.jpg', caption: 'Game day', span: 'normal', position: 'center' },
+  { src: '/photo-mall.jpg', caption: 'Off duty', span: 'tall', position: 'center' },
 ];
 
 export default function BehindTheScenes() {
@@ -34,7 +34,16 @@ export default function BehindTheScenes() {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ delay: i * 0.06, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <img src={photo.src} alt={photo.caption} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            <img 
+              src={photo.src} 
+              alt={photo.caption} 
+              style={{ 
+                width: '100%', 
+                height: '100%', 
+                objectFit: 'cover',
+                objectPosition: photo.position
+              }} 
+            />
             <div className={styles.overlay}>
               <span className={styles.caption}>{photo.caption}</span>
             </div>
