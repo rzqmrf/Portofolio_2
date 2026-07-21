@@ -1,4 +1,5 @@
 'use client';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import styles from './Experience.module.css';
@@ -18,9 +19,18 @@ const timeline = [
     company: 'EEPIS Surabaya',
     desc: 'Studying software engineering, database systems, HCI, and building various academic projects in web & IoT.',
   },
+  {
+    logo: '/pens.png',
+    period: '2024',
+    role: 'Fullstack Developer',
+    company: 'E-Reserv Project',
+    desc: 'Built a facility booking system end-to-end: designed the UI, wrote the backend in PHP/MySQL, and deployed for campus use.',
+  },
 ];
 
 export default function Experience() {
+  const [failedLogos, setFailedLogos] = useState<Record<number, boolean>>({});
+
   return (
     <section id="experience" className="wrap">
       <div className="section-head">
@@ -29,45 +39,50 @@ export default function Experience() {
       </div>
 
       <div className={styles.timeline}>
-        {timeline.map((item, i) => (
-          <motion.div
-            key={i}
-            className={styles.row}
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ 
-              type: "spring", 
-              stiffness: 70, 
-              damping: 15, 
-              delay: i * 0.12 
-            }}
-          >
-            <div className={styles.left}>
-              <div className={styles.logoFrame}>
-                <Image
-                  src={item.logo}
-                  alt={item.company}
-                  fill
-                  style={{ objectFit: 'contain' }}
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                  }}
-                />
-                <span className={styles.logoFallback}>{item.company.charAt(0)}</span>
+        {timeline.map((item, i) => {
+          const hasFailed = failedLogos[i];
+          return (
+            <motion.div
+              key={i}
+              className={styles.row}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 70, 
+                damping: 15, 
+                delay: i * 0.12 
+              }}
+            >
+              <div className={styles.left}>
+                <div className={styles.logoFrame}>
+                  {!hasFailed ? (
+                    <Image
+                      src={item.logo}
+                      alt={item.company}
+                      fill
+                      style={{ objectFit: 'contain' }}
+                      onError={() => {
+                        setFailedLogos(prev => ({ ...prev, [i]: true }));
+                      }}
+                    />
+                  ) : (
+                    <span className={styles.logoFallback}>{item.company.charAt(0)}</span>
+                  )}
+                </div>
               </div>
-            </div>
-            <div className={styles.right}>
-              <div className={styles.roleRow}>
-                <h3 className={styles.role}>{item.role}</h3>
-                <span className={styles.period}>{item.period}</span>
+              <div className={styles.right}>
+                <div className={styles.roleRow}>
+                  <h3 className={styles.role}>{item.role}</h3>
+                  <span className={styles.period}>{item.period}</span>
+                </div>
+                <span className={styles.company}>{item.company}</span>
+                <p className={styles.desc}>{item.desc}</p>
               </div>
-              <span className={styles.company}>{item.company}</span>
-              <p className={styles.desc}>{item.desc}</p>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );
