@@ -1,5 +1,5 @@
 'use client';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import styles from './BehindTheScenes.module.css';
 
@@ -16,6 +16,11 @@ const photos = [
 
 function GalleryCell({ photo, index }: { photo: typeof photos[0]; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
+  const [isHoverable, setIsHoverable] = useState(false);
+
+  useEffect(() => {
+    setIsHoverable(window.matchMedia('(hover: hover) and (pointer: fine)').matches);
+  }, []);
   
   // Mouse tracking variables
   const x = useMotionValue(0);
@@ -29,7 +34,7 @@ function GalleryCell({ photo, index }: { photo: typeof photos[0]; index: number 
   const imgScale = useSpring(1, { stiffness: 180, damping: 22 });
 
   const handleMouseMove = (event: React.MouseEvent) => {
-    if (!cardRef.current) return;
+    if (!isHoverable || !cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
     const mouseX = event.clientX - rect.left - rect.width / 2;
     const mouseY = event.clientY - rect.top - rect.height / 2;
@@ -62,8 +67,8 @@ function GalleryCell({ photo, index }: { photo: typeof photos[0]; index: number 
       }}
       style={{ 
         aspectRatio: photo.aspect,
-        rotateX,
-        rotateY,
+        rotateX: isHoverable ? rotateX : 0,
+        rotateY: isHoverable ? rotateY : 0,
         transformStyle: 'preserve-3d',
         perspective: '1000px'
       }}
@@ -77,17 +82,21 @@ function GalleryCell({ photo, index }: { photo: typeof photos[0]; index: number 
           objectFit: 'cover',
           objectPosition: photo.position,
           scale: imgScale,
-          transform: 'translateZ(-15px)',
+          transform: isHoverable ? 'translateZ(-15px)' : 'none',
           transition: 'filter 0.3s ease'
         }} 
       />
       <div 
         className={styles.overlay}
-        style={{ transform: 'translateZ(10px)', transformStyle: 'preserve-3d' }}
+        style={{ 
+          transform: isHoverable ? 'translateZ(10px)' : 'none', 
+          transformStyle: 'preserve-3d',
+          opacity: isHoverable ? undefined : 1 // Always show caption overlay on mobile since there is no hover!
+        }}
       >
         <span 
           className={styles.caption}
-          style={{ transform: 'translateZ(25px)' }}
+          style={{ transform: isHoverable ? 'translateZ(25px)' : 'none' }}
         >
           {photo.caption}
         </span>
