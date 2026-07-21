@@ -49,7 +49,7 @@ export default function EReservCaseStudy() {
         <div className={styles.heroImage}>
           <div className={styles.imageWrapper}>
             <Image 
-              src="/reserv.jpg" 
+              src="/ereserv.png" 
               alt="E-Reserv Dashboard Cover" 
               fill 
               style={{ objectFit: 'cover' }} 
