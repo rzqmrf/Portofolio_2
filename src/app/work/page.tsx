@@ -25,7 +25,7 @@ const PROJECTS_DATA = [
     category: 'Web App',
     desc: 'A facility reservation application built to automate venue bookings, scheduling loops, and queue approvals.',
     tech: ['Figma', 'PHP', 'MySQL'],
-    image: '/reserv.png',
+    image: '/ereserv.png',
     link: '/work/e-reserv',
   },
   {
