@@ -46,7 +46,6 @@ export default function Experience() {
                   fill
                   style={{ objectFit: 'contain' }}
                   onError={(e) => {
-                    // Fallback to placeholder if image doesn't exist yet
                     const target = e.target as HTMLImageElement;
                     target.style.display = 'none';
                   }}
@@ -55,12 +54,11 @@ export default function Experience() {
               </div>
             </div>
             <div className={styles.right}>
-              <h3 className={styles.role}>{item.role}</h3>
-              <div className={styles.metaRow}>
-                <span className={styles.company}>{item.company}</span>
-                <span className={styles.separator}>•</span>
+              <div className={styles.roleRow}>
+                <h3 className={styles.role}>{item.role}</h3>
                 <span className={styles.period}>{item.period}</span>
               </div>
+              <span className={styles.company}>{item.company}</span>
               <p className={styles.desc}>{item.desc}</p>
             </div>
           </motion.div>

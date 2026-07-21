@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding: 8px; /* small padding to keep logo clean inside border */
+  padding: 8px;
 }
 
 .logoFallback {
@@ -47,6 +47,15 @@
 .right {
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+.roleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  width: 100%;
 }
 
 .role {
@@ -57,25 +66,12 @@
   line-height: 1.2;
 }
 
-.metaRow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 6px;
-  flex-wrap: wrap;
-}
-
 .company {
   font-family: var(--serif);
   font-style: italic;
   font-size: 16px;
   color: var(--accent);
-}
-
-.separator {
-  color: var(--text-muted);
-  font-size: 12px;
-  opacity: 0.5;
+  margin-top: 4px;
 }
 
 .period {
@@ -83,6 +79,7 @@
   font-size: 12px;
   letter-spacing: 0.02em;
   color: var(--text-muted);
+  white-space: nowrap;
 }
 
 .desc {
@@ -97,5 +94,11 @@
   .row {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+  
+  .roleRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
   }
 }
