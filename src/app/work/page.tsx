@@ -25,7 +25,7 @@ const PROJECTS_DATA = [
     category: 'Web App',
     desc: 'A facility reservation application built to automate venue bookings, scheduling loops, and queue approvals.',
     tech: ['Figma', 'PHP', 'MySQL'],
-    image: '/reserv.jpg',
+    image: '/reserv.png',
     link: '/work/e-reserv',
   },
   {
@@ -35,7 +35,7 @@ const PROJECTS_DATA = [
     category: 'Mobile',
     desc: 'A community mobile application to report and map lost and found items in Indonesian neighborhoods.',
     tech: ['Figma', 'Mobile UX', 'Product Design'],
-    image: '/balang.jpg',
+    image: '/balang.png',
     link: '#',
   },
   {
@@ -45,7 +45,7 @@ const PROJECTS_DATA = [
     category: 'IoT',
     desc: 'Water level indicator dashboard with ultrasonic sensor readings and hardware status logs.',
     tech: ['Figma', 'PHP Native', 'Hardware'],
-    image: '/toren.png',
+    image: '/dashboard.png',
     link: '#',
   },
 ];
