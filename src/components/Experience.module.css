@@ -4,23 +4,49 @@
 
 .row {
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 48px;
+  grid-template-columns: 110px 1fr;
+  gap: 24px;
   padding: 40px 0;
   border-bottom: 1px solid var(--border);
   transition: background 0.3s ease;
+  align-items: center;
 }
 
 .row:hover {
   background: rgba(255, 255, 255, 0.01);
 }
 
-.period {
+.left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.logoFrame {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 8px; /* small padding to keep logo clean inside border */
+}
+
+.logoFallback {
   font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: 0.04em;
+  font-size: 16px;
+  font-weight: 700;
   color: var(--text-muted);
-  padding-top: 4px;
+  text-transform: uppercase;
+  z-index: 0;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
 }
 
 .role {
@@ -31,13 +57,32 @@
   line-height: 1.2;
 }
 
+.metaRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
 .company {
-  display: block;
   font-family: var(--serif);
   font-style: italic;
-  font-size: 15px;
+  font-size: 16px;
   color: var(--accent);
-  margin-top: 4px;
+}
+
+.separator {
+  color: var(--text-muted);
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.period {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
 }
 
 .desc {
@@ -45,12 +90,12 @@
   font-size: 15px;
   color: var(--text-muted);
   line-height: 1.7;
-  max-width: 540px;
+  max-width: 600px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .row {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 16px;
   }
 }

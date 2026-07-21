@@ -1,16 +1,19 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import styles from './Experience.module.css';
 
 const timeline = [
   {
-    period: 'Juni 2026 — Present',
+    logo: '/psd.png',
+    period: 'Feb 2025 — Present',
     role: 'UI/UX Design Intern',
-    company: 'PT Integrasi Logistik Cipta Solusi',
+    company: 'PT ILCS',
     desc: 'Redesigning enterprise logistics dashboards (Tanos ERP) for port freight coordination — from user research to hi-fi prototypes shipped in production.',
   },
   {
-    period: 'August 2024 — Present',
+    logo: '/pens.png',
+    period: '2022 — Present',
     role: 'Informatics Engineering',
     company: 'EEPIS Surabaya',
     desc: 'Studying software engineering, database systems, HCI, and building various academic projects in web & IoT.',
@@ -36,11 +39,28 @@ export default function Experience() {
             transition={{ delay: i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className={styles.left}>
-              <span className={styles.period}>{item.period}</span>
+              <div className={styles.logoFrame}>
+                <Image
+                  src={item.logo}
+                  alt={item.company}
+                  fill
+                  style={{ objectFit: 'contain' }}
+                  onError={(e) => {
+                    // Fallback to placeholder if image doesn't exist yet
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                  }}
+                />
+                <span className={styles.logoFallback}>{item.company.charAt(0)}</span>
+              </div>
             </div>
             <div className={styles.right}>
               <h3 className={styles.role}>{item.role}</h3>
-              <span className={styles.company}>{item.company}</span>
+              <div className={styles.metaRow}>
+                <span className={styles.company}>{item.company}</span>
+                <span className={styles.separator}>•</span>
+                <span className={styles.period}>{item.period}</span>
+              </div>
               <p className={styles.desc}>{item.desc}</p>
             </div>
           </motion.div>
