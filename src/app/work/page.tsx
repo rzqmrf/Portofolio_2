@@ -55,7 +55,7 @@ const PROJECTS_DATA = [
     category: 'Web App',
     desc: 'A modern, interactive task management web application featuring dark/light mode toggles, automated progress bars, and local storage persistence.',
     tech: ['HTML5', 'CSS3', 'JavaScript', 'LocalStorage'],
-    image: '/photo-code.jpg',
+    image: '/focusly.png',
     link: '/work/focusly',
   },
 ];
