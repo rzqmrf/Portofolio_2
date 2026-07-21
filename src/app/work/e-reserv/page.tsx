@@ -18,10 +18,10 @@ export default function EReservCaseStudy() {
             <div className={styles.titleArea}>
               <div className="eyebrow">CASE STUDY // 02</div>
               <h1 className={styles.title}>
-                E-Reserv <span className={styles.titleSerif}>Hub.</span>
+                E-Reserv <span className={styles.titleSerif}>Lap.</span>
               </h1>
               <p className={styles.subtitle}>
-                An automated booking portal designed to manage facility schedules, handle reservation queues, and send instant supervisor approvals.
+                An integrated digital platform designed to streamline sports field reservations connecting tenants and managers via a Flutter mobile app & Laravel admin panel.
               </p>
             </div>
 
@@ -40,7 +40,7 @@ export default function EReservCaseStudy() {
               </div>
               <div className={styles.metaItem}>
                 <span className={styles.metaLabel}>STACK</span>
-                <span className={styles.metaVal}>Figma, PHP, MySQL, CSS</span>
+                <span className={styles.metaVal}>Flutter, Laravel 12, MySQL, Midtrans</span>
               </div>
             </div>
           </div>
@@ -77,41 +77,41 @@ export default function EReservCaseStudy() {
               <section id="overview" className={styles.bodySection}>
                 <h2><span className={styles.secNum}>01 /</span> Overview</h2>
                 <p>
-                  E-Reserv is a web application designed to handle reservations of meeting rooms, shared spaces, and corporate assets. It replaces paper request slips and manual email approvals with a digitized, automated queueing database.
+                  E-Reserv is an integrated digital platform designed to streamline sports field reservations. It connects field tenants with facility managers through a multiplatform mobile client (Flutter) for real-time slot bookings and a web-based administration panel (Laravel 12) automated with digital payment gateways and AI-powered financial prediction engine.
                 </p>
               </section>
 
               <section id="problem" className={styles.bodySection}>
                 <h2><span className={styles.secNum}>02 /</span> The Bottleneck</h2>
                 <p>
-                  The previous reservation workflow took an average of 3 days to complete. Users had to print a paper request slip, obtain physically signed approvals from department heads, and drop the slip off at the facility office. Double bookings occurred frequently due to updates not being synchronized.
+                  Traditional sports venue booking workflows frequently suffered from double-bookings due to asynchronous schedule updates. Customers had to manually coordinate available hours, transfer fees via bank transfers, and send photos of receipts for manual verification. Additionally, court occupancy was suboptimal during off-peak hours because individual players often struggled to find enough teammates to share court booking costs.
                 </p>
               </section>
 
               <section id="architecture" className={styles.bodySection}>
                 <h2><span className={styles.secNum}>03 /</span> Database Architecture</h2>
                 <p>
-                  I architected a relational database schema in MySQL containing key tables: <code>users</code>, <code>facilities</code>, <code>reservations</code>, and <code>approvals</code>. I designed constraints to prevent overlapping reservations programmatically at the query level, ensuring schedule conflicts are mathematically impossible.
+                  I architected a relational database schema in MySQL containing key tables: <code>users</code>, <code>fields</code>, <code>schedules</code>, <code>slots</code>, <code>bookings</code>, and <code>payments</code>. The system dynamically generates 1-hour time slots based on field schedules and enforces strict capacity validation. Overlapping reservations are programmatically blocked at the database query level, preventing conflicts even during concurrent payment settlements (race conditions).
                 </p>
               </section>
 
               <section id="ui" className={styles.bodySection}>
                 <h2><span className={styles.secNum}>04 /</span> Interface System</h2>
                 <p>
-                  The visual design was structured in Figma using a clean light-themed UI language (which we transitioned into a premium dark theme for this portfolio). It features a real-time calendar grid, reservation statuses labeled with colorful indicator badges, and a minimal admin panel for quick approval actions.
+                  The visual design utilizes a premium dark-themed, sporty-tech UI language across the mobile app (Flutter) and admin dashboard (Laravel). It features an interactive daily calendar, live remaining court capacity indicators, colorful reservation status badges, and an administrative panel with integrated Chart.js visualizations for financial metrics.
                 </p>
               </section>
 
               <section id="result" className={styles.bodySection}>
                 <h2><span className={styles.secNum}>05 /</span> Outcome & Impact</h2>
                 <p>
-                  By deploying E-Reserv, we successfully automated the workflow from end-to-end. Users can instantly request a facility from their browsers, and managers receive real-time notifications to approve or decline in a single click.
+                  By deploying E-Reserv, we successfully automated the sports reservation workflow end-to-end. Tenants can pay instantly via Midtrans (triggering automated status approvals), other players can join public sessions for free (the Host-Joiner model), and venue administrators can forecast upcoming 7-day revenue using a custom Neural Network (MLPRegressor) model directly from their dashboard.
                 </p>
 
                 <div className={styles.metricsGrid}>
                   <div className={styles.metricCard}>
                     <div className={styles.metricNum}>98%</div>
-                    <div className={styles.metricLabel}>Reduction in processing time</div>
+                    <div className={styles.metricLabel}>Reduction in payment processing and verification time</div>
                   </div>
                   <div className={styles.metricCard}>
                     <div className={styles.metricNum}>0%</div>
