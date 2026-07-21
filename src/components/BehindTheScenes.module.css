@@ -1,44 +1,77 @@
-.serif {
-  font-family: var(--serif);
-  font-style: italic;
-  font-weight: 400;
-  color: var(--accent);
-}
-
 .masonry {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 200px;
-  gap: 12px;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 60px 32px;
+  align-items: start;
 }
 
 .cell {
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
   border: 1px solid var(--border);
   cursor: pointer;
+  background: var(--bg-elevated);
 }
 
 .cell img {
-  transition: transform 0.7s var(--ease-out);
+  transition: transform 0.8s var(--ease-out);
 }
 
 .cell:hover img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
-.wide {
-  grid-column: span 2;
+/* --- Artistic Editorial Shapes & Placements --- */
+.sunset {
+  grid-column: span 7;
+  aspect-ratio: 16/10;
+  border-radius: 16px;
 }
 
-.tall {
-  grid-row: span 2;
+.campus {
+  grid-column: span 5;
+  aspect-ratio: 3/4;
+  border-radius: 120px 120px 16px 16px; /* Arch shape */
+  margin-top: 80px;
 }
 
-.big {
-  grid-column: span 2;
-  grid-row: span 2;
+.hiking {
+  grid-column: span 4;
+  aspect-ratio: 1/1;
+  border-radius: 16px;
+}
+
+.river {
+  grid-column: span 8;
+  aspect-ratio: 16/9;
+  border-radius: 80px 16px 80px 16px; /* Leaf shape */
+  margin-top: -60px;
+}
+
+.code {
+  grid-column: span 5;
+  aspect-ratio: 16/10;
+  border-radius: 999px; /* Pill shape */
+}
+
+.class {
+  grid-column: span 3;
+  aspect-ratio: 3/4;
+  border-radius: 16px;
+  margin-top: 60px;
+}
+
+.futsal {
+  grid-column: span 4;
+  aspect-ratio: 1/1;
+  border-radius: 16px 80px 16px 80px; /* Mirrored Leaf shape */
+}
+
+.mall {
+  grid-column: span 6;
+  aspect-ratio: 3/4;
+  border-radius: 16px;
+  margin-top: -80px;
 }
 
 .overlay {
@@ -47,7 +80,7 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 50%);
   display: flex;
   align-items: flex-end;
-  padding: 20px;
+  padding: 24px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -69,20 +102,46 @@
   transform: translateY(0);
 }
 
-@media (max-width: 860px) {
+.serif {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+@media (max-width: 900px) {
   .masonry {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 180px;
+    gap: 32px 24px;
+  }
+  
+  .sunset, .campus, .hiking, .river, .code, .class, .futsal, .mall {
+    grid-column: span 1 !important;
+    margin-top: 0 !important;
+    aspect-ratio: 1/1 !important;
+    border-radius: 16px !important;
+  }
+  
+  .sunset, .river {
+    grid-column: span 2 !important;
+    aspect-ratio: 16/10 !important;
   }
 }
 
 @media (max-width: 480px) {
   .masonry {
     grid-template-columns: 1fr;
-    grid-auto-rows: 220px;
+    gap: 20px;
   }
-  .wide, .tall, .big {
-    grid-column: span 1;
-    grid-row: span 1;
+  
+  .sunset, .campus, .hiking, .river, .code, .class, .futsal, .mall {
+    grid-column: span 1 !important;
+    margin-top: 0 !important;
+    aspect-ratio: 1/1 !important;
+    border-radius: 14px !important;
+  }
+  
+  .sunset, .river {
+    aspect-ratio: 16/10 !important;
   }
 }
