@@ -7,6 +7,8 @@ import styles from './Navbar.module.css';
 
 const navItems = [
   { path: '/work', label: 'Work' },
+  { path: '/playground', label: 'Playground' },
+  { path: '/uses', label: 'Uses' },
   { path: '/about', label: 'About' },
   { path: '/contact', label: 'Contact' }
 ];
