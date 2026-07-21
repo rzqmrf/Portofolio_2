@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import styles from './BehindTheScenes.module.css';
 
 const photos = [
-  { src: '/photo-beach.jpg', caption: 'Sunset vibes', span: 'wide', position: 'center 85%' },
+  { src: '/photo-beach.jpg', caption: 'Sunset vibes', span: 'big', position: 'center 85%' },
   { src: '/photo-campus.jpg', caption: 'Campus life', span: 'tall', position: 'center' },
   { src: '/photo-hiking.jpg', caption: 'Exploring peaks', span: 'normal', position: 'center' },
-  { src: '/photo-river.jpg', caption: 'Chasing waterfalls', span: 'wide', position: 'center 95%' },
+  { src: '/photo-river.jpg', caption: 'Chasing waterfalls', span: 'big', position: 'center 95%' },
   { src: '/photo-code.jpg', caption: 'Late night code', span: 'normal', position: 'center' },
   { src: '/photo-class.jpg', caption: 'Presenting ideas', span: 'normal', position: 'center' },
   { src: '/photo-futsal.jpg', caption: 'Game day', span: 'normal', position: 'center' },
@@ -28,7 +28,7 @@ export default function BehindTheScenes() {
         {photos.map((photo, i) => (
           <motion.div
             key={photo.src}
-            className={`${styles.cell} ${photo.span === 'wide' ? styles.wide : ''} ${photo.span === 'tall' ? styles.tall : ''}`}
+            className={`${styles.cell} ${photo.span === 'wide' ? styles.wide : ''} ${photo.span === 'tall' ? styles.tall : ''} ${photo.span === 'big' ? styles.big : ''}`}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
