@@ -34,10 +34,15 @@ export default function Skills() {
           <motion.div
             key={cat.label}
             className={styles.card}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
-            transition={{ delay: ci * 0.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: 50, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 90, 
+              damping: 18, 
+              delay: ci * 0.1 
+            }}
           >
             <div className={styles.cardHeader}>
               <span className={styles.num}>0{ci + 1}</span>

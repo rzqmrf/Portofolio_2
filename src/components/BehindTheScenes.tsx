@@ -29,10 +29,15 @@ export default function BehindTheScenes() {
           <motion.div
             key={photo.src}
             className={styles.cell}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ delay: i * 0.05, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, y: 60, scale: 0.92, rotate: i % 2 === 0 ? -1.5 : 1.5 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 80, 
+              damping: 18, 
+              delay: i * 0.05 
+            }}
             style={{ aspectRatio: photo.aspect }}
           >
             <img 
