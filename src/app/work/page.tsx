@@ -23,8 +23,8 @@ const PROJECTS_DATA = [
     num: '02',
     title: 'E-Reserv',
     category: 'Web App',
-    desc: 'A facility reservation application built to automate venue bookings, scheduling loops, and queue approvals.',
-    tech: ['Figma', 'PHP', 'MySQL'],
+    desc: 'An integrated digital platform for sports field reservations connecting tenants and managers via a Flutter app & Laravel admin panel.',
+    tech: ['Flutter', 'Laravel 12', 'MySQL', 'Midtrans'],
     image: '/ereserv.png',
     link: '/work/e-reserv',
   },
@@ -33,20 +33,20 @@ const PROJECTS_DATA = [
     num: '03',
     title: 'BALANG',
     category: 'Mobile',
-    desc: 'A community mobile application to report and map lost and found items in Indonesian neighborhoods.',
-    tech: ['Figma', 'Mobile UX', 'Product Design'],
+    desc: 'A crowd-sourced mobile application built with Flutter to report, verify, and map lost & found items in Indonesian neighborhoods using geolocation.',
+    tech: ['Flutter', 'Firebase', 'Google Maps API', 'Figma'],
     image: '/balang.png',
-    link: '#',
+    link: 'https://github.com/rzqmrf/balang', // Placeholder: change to actual URL
   },
   {
     id: 'iot-toren',
     num: '04',
     title: 'Monitoring Toren',
     category: 'IoT',
-    desc: 'Water level indicator dashboard with ultrasonic sensor readings and hardware status logs.',
-    tech: ['Figma', 'PHP Native', 'Hardware'],
+    desc: 'An IoT dashboard and hardware system utilizing ultrasonic sensors to monitor water tower levels, trigger automated pumps, and log real-time consumption data.',
+    tech: ['Arduino', 'ESP8266', 'PHP Native', 'MySQL', 'Bootstrap'],
     image: '/dashboard.png',
-    link: '#',
+    link: 'https://github.com/rzqmrf/monitoring-toren', // Placeholder: change to actual URL
   },
 ];
 
@@ -113,7 +113,16 @@ export default function WorkPage() {
                     </div>
                   </div>
                   <div className={styles.rowAction}>
-                    {project.link !== '#' ? (
+                    {project.link.startsWith('http') ? (
+                      <a 
+                        href={project.link} 
+                        className="btn btn--outline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        GitHub ↗
+                      </a>
+                    ) : project.link !== '#' ? (
                       <Link href={project.link} className="btn btn--outline">
                         Case study →
                       </Link>
