@@ -57,6 +57,7 @@
   }
   .photo {
     position: relative;
+    top: auto;
     aspect-ratio: 4/5;
     max-width: 100%;
     margin-bottom: 16px;
