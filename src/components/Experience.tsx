@@ -7,24 +7,17 @@ import styles from './Experience.module.css';
 const timeline = [
   {
     logo: '/psd.png',
-    period: 'Feb 2025 — Present',
+    period: 'June 2026 — Present',
     role: 'UI/UX Design Intern',
-    company: 'PT ILCS',
+    company: 'Pelindo Solusi Digital (PSD)',
     desc: 'Redesigning enterprise logistics dashboards (Tanos ERP) for port freight coordination — from user research to hi-fi prototypes shipped in production.',
   },
   {
     logo: '/pens.png',
-    period: '2022 — Present',
+    period: 'August 2024 — Present',
     role: 'Informatics Engineering',
-    company: 'EEPIS Surabaya',
+    company: 'Electronic Engineering Polytechnic Institute of Surabaya (PENS)',
     desc: 'Studying software engineering, database systems, HCI, and building various academic projects in web & IoT.',
-  },
-  {
-    logo: '/pens.png',
-    period: '2024',
-    role: 'Fullstack Developer',
-    company: 'E-Reserv Project',
-    desc: 'Built a facility booking system end-to-end: designed the UI, wrote the backend in PHP/MySQL, and deployed for campus use.',
   },
 ];
 
