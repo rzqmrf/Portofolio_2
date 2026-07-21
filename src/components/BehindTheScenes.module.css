@@ -1,16 +1,19 @@
 .masonry {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 60px 32px;
-  align-items: start;
+  column-count: 3;
+  column-gap: 28px;
+  width: 100%;
 }
 
 .cell {
+  break-inside: avoid;
+  margin-bottom: 28px;
   position: relative;
   overflow: hidden;
+  border-radius: 14px;
   border: 1px solid var(--border);
-  cursor: pointer;
   background: var(--bg-elevated);
+  cursor: pointer;
+  display: block;
 }
 
 .cell img {
@@ -21,66 +24,13 @@
   transform: scale(1.05);
 }
 
-/* --- Artistic Editorial Shapes & Placements --- */
-.sunset {
-  grid-column: span 7;
-  aspect-ratio: 16/10;
-  border-radius: 16px;
-}
-
-.campus {
-  grid-column: span 5;
-  aspect-ratio: 3/4;
-  border-radius: 120px 120px 16px 16px; /* Arch shape */
-  margin-top: 80px;
-}
-
-.hiking {
-  grid-column: span 4;
-  aspect-ratio: 1/1;
-  border-radius: 16px;
-}
-
-.river {
-  grid-column: span 8;
-  aspect-ratio: 16/9;
-  border-radius: 80px 16px 80px 16px; /* Leaf shape */
-  margin-top: -60px;
-}
-
-.code {
-  grid-column: span 5;
-  aspect-ratio: 16/10;
-  border-radius: 999px; /* Pill shape */
-}
-
-.class {
-  grid-column: span 3;
-  aspect-ratio: 3/4;
-  border-radius: 16px;
-  margin-top: 60px;
-}
-
-.futsal {
-  grid-column: span 4;
-  aspect-ratio: 1/1;
-  border-radius: 16px 80px 16px 80px; /* Mirrored Leaf shape */
-}
-
-.mall {
-  grid-column: span 6;
-  aspect-ratio: 3/4;
-  border-radius: 16px;
-  margin-top: -80px;
-}
-
 .overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 50%);
   display: flex;
   align-items: flex-end;
-  padding: 24px;
+  padding: 20px;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -111,37 +61,22 @@
 
 @media (max-width: 900px) {
   .masonry {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px 24px;
+    column-count: 2;
+    column-gap: 20px;
   }
-  
-  .sunset, .campus, .hiking, .river, .code, .class, .futsal, .mall {
-    grid-column: span 1 !important;
-    margin-top: 0 !important;
-    aspect-ratio: 1/1 !important;
-    border-radius: 16px !important;
-  }
-  
-  .sunset, .river {
-    grid-column: span 2 !important;
-    aspect-ratio: 16/10 !important;
+  .cell {
+    margin-bottom: 20px;
+    border-radius: 12px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 550px) {
   .masonry {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    column-count: 1;
+    column-gap: 0;
   }
-  
-  .sunset, .campus, .hiking, .river, .code, .class, .futsal, .mall {
-    grid-column: span 1 !important;
-    margin-top: 0 !important;
-    aspect-ratio: 1/1 !important;
-    border-radius: 14px !important;
-  }
-  
-  .sunset, .river {
-    aspect-ratio: 16/10 !important;
+  .cell {
+    margin-bottom: 16px;
+    border-radius: 10px;
   }
 }

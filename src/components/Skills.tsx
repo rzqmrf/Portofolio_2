@@ -29,22 +29,36 @@ export default function Skills() {
         <h2 className="section-title">What I work with.</h2>
       </div>
 
-      <div className={styles.columns}>
+      <div className={styles.grid}>
         {categories.map((cat, ci) => (
           <motion.div
             key={cat.label}
-            className={styles.column}
-            initial={{ opacity: 0, y: 20 }}
+            className={styles.card}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
-            transition={{ delay: ci * 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: ci * 0.08, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h3 className={styles.colLabel}>{cat.label}</h3>
-            <ul className={styles.list}>
-              {cat.skills.map(skill => (
-                <li key={skill} className={styles.item}>{skill}</li>
+            <div className={styles.cardHeader}>
+              <span className={styles.num}>0{ci + 1}</span>
+              <h3 className={styles.label}>{cat.label}</h3>
+            </div>
+            <div className={styles.tags}>
+              {cat.skills.map((skill, si) => (
+                <motion.span
+                  key={skill}
+                  className={styles.tag}
+                  whileHover={{ 
+                    y: -3,
+                    scale: 1.03,
+                    transition: { type: "spring", stiffness: 400, damping: 15 }
+                  }}
+                >
+                  <span className={styles.dot} />
+                  {skill}
+                </motion.span>
               ))}
-            </ul>
+            </div>
           </motion.div>
         ))}
       </div>
