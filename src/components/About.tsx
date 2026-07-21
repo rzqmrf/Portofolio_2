@@ -41,7 +41,7 @@ export default function About() {
               I'm a UI/UX Designer and Frontend Developer, currently interning at PT Integrasi Logistik Cipta Solusi (ILCS), where I work on enterprise dashboard redesigns — from research and wireframes to shipped interfaces.
             </p>
             <p>
-              What keeps me in this field is the overlap between design and code: I like understanding a problem deeply enough to design the right solution, and then being able to build it myself. I'm studying Informatics Engineering at EEPIS Surabaya.
+              What keeps me in this field is the overlap between design and code: I enjoy understanding problems deeply enough to design the right solution, and then bringing those solutions to life through code. I'm currently majoring in Informatics Engineering at Electronic Engineering Polytechnic Insitute of Surabaya.
             </p>
           </motion.div>
 

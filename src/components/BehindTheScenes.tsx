@@ -1,6 +1,5 @@
 'use client';
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import styles from './BehindTheScenes.module.css';
 
 const photos = [
@@ -35,7 +34,7 @@ export default function BehindTheScenes() {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ delay: i * 0.06, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            <Image src={photo.src} alt={photo.caption} fill style={{ objectFit: 'cover' }} />
+            <img src={photo.src} alt={photo.caption} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             <div className={styles.overlay}>
               <span className={styles.caption}>{photo.caption}</span>
             </div>
