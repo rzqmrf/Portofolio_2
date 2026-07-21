@@ -44,12 +44,6 @@
   font-size: 14px;
   font-weight: 500;
   color: #fff;
-  transform: translateY(10px);
-  transition: transform 0.4s var(--ease-out);
-}
-
-.cell:hover .caption {
-  transform: translateY(0);
 }
 
 .serif {

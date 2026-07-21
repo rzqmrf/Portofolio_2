@@ -18,13 +18,6 @@ const timeline = [
     company: 'EEPIS Surabaya',
     desc: 'Studying software engineering, database systems, HCI, and building various academic projects in web & IoT.',
   },
-  {
-    logo: '/pens.png',
-    period: '2024',
-    role: 'Fullstack Developer',
-    company: 'E-Reserv Project',
-    desc: 'Built a facility booking system end-to-end: designed the UI, wrote the backend in PHP/MySQL, and deployed for campus use.',
-  },
 ];
 
 export default function Experience() {
