@@ -53,9 +53,12 @@
 @media (max-width: 860px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
   .photo {
-    position: static;
-    aspect-ratio: 16/10;
+    position: relative;
+    aspect-ratio: 4/5;
+    max-width: 100%;
+    margin-bottom: 16px;
   }
 }
