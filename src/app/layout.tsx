@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import CustomCursor from '@/components/CustomCursor';
+import GlowBackground from '@/components/GlowBackground';
 
 export const metadata: Metadata = {
   title: "Muhammad Rozaq Ma'ruf — UI/UX Designer & Full-Stack Developer",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <GlowBackground />
         <CustomCursor />
         <main>{children}</main>
       </body>

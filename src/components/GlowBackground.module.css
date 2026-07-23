@@ -1,0 +1,51 @@
+.container {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0; /* Behind everything */
+}
+
+.spotlight {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.04) 0%, rgba(139, 92, 246, 0) 70%);
+  filter: blur(40px);
+  will-change: transform;
+}
+
+.blob1 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 80%);
+  filter: blur(100px);
+  top: -10%;
+  left: -10%;
+  animation: float1 25s infinite alternate ease-in-out;
+}
+
+.blob2 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.06) 0%, transparent 80%);
+  filter: blur(120px);
+  bottom: -10%;
+  right: -10%;
+  animation: float2 30s infinite alternate ease-in-out;
+}
+
+@keyframes float1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(120px, 80px) scale(1.15); }
+}
+
+@keyframes float2 {
+  0% { transform: translate(0, 0) scale(1.1); }
+  100% { transform: translate(-120px, -60px) scale(0.9); }
+}
