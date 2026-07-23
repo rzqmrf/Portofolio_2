@@ -1,0 +1,38 @@
+.airplaneWrapper {
+  position: fixed;
+  right: 6%;
+  top: 40%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 998;
+  pointer-events: none;
+}
+
+.airplane {
+  filter: drop-shadow(0 4px 10px rgba(139, 92, 246, 0.3));
+  color: var(--accent);
+}
+
+/* Subtle trailing dust effect */
+.trail {
+  position: absolute;
+  width: 2px;
+  height: 20px;
+  background: linear-gradient(to top, rgba(139, 92, 246, 0.15), transparent);
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Hide on mobile screens to prevent overlapping content */
+@media (max-width: 1024px) {
+  .airplaneWrapper {
+    display: none;
+  }
+}

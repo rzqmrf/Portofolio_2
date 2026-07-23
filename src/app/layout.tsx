@@ -3,6 +3,7 @@ import './globals.css';
 import CustomCursor from '@/components/CustomCursor';
 import GlowBackground from '@/components/GlowBackground';
 import ScrollToTopAirplane from '@/components/ScrollToTopAirplane';
+import ScrollPaperAirplane from '@/components/ScrollPaperAirplane';
 
 export const metadata: Metadata = {
   title: "Muhammad Rozaq Ma'ruf — UI/UX Designer & Full-Stack Developer",
@@ -20,6 +21,7 @@ export default function RootLayout({
         <GlowBackground />
         <CustomCursor />
         <ScrollToTopAirplane />
+        <ScrollPaperAirplane />
         <main>{children}</main>
       </body>
     </html>
