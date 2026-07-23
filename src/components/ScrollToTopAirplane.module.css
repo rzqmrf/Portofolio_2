@@ -1,0 +1,58 @@
+.button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  outline: none;
+  transition: border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button:hover {
+  border-color: var(--accent);
+  color: #EDEDED;
+  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.2);
+}
+
+.progressRing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-90deg); /* Start progress from the top */
+  pointer-events: none;
+}
+
+.circleBg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.03);
+  stroke-width: 2.5;
+}
+
+.circleProgress {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+}
+
+.airplane {
+  position: absolute;
+  color: inherit;
+}
+
+@media (max-width: 640px) {
+  .button {
+    bottom: 24px;
+    right: 24px;
+  }
+}
