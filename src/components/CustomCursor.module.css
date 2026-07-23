@@ -1,20 +1,36 @@
 .dot {
   position: fixed;
-  width: 10px;
-  height: 10px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--accent);
   pointer-events: none;
-  z-index: 9998;
+  z-index: 100000;
   transform: translate(-50%, -50%);
-  transition: width 0.25s ease, height 0.25s ease, opacity 0.25s ease, background 0.25s ease;
-  mix-blend-mode: difference;
-  opacity: 0.7;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.dot.active {
-  width: 40px;
-  height: 40px;
-  opacity: 0.2;
-  background: #fff;
+.ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), height 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, background-color 0.3s ease;
+  will-change: width, height;
+}
+
+/* Hover state styling */
+.ringActive {
+  width: 56px;
+  height: 56px;
+  border-color: #EDEDED;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.dotActive {
+  transform: translate(-50%, -50%) scale(0);
 }

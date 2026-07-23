@@ -10,8 +10,9 @@ export default function CustomCursor() {
   const x = useMotionValue(-100);
   const y = useMotionValue(-100);
 
-  const springX = useSpring(x, { damping: 25, stiffness: 300, mass: 0.4 });
-  const springY = useSpring(y, { damping: 25, stiffness: 300, mass: 0.4 });
+  // Smooth trailing spring for the outer ring
+  const springX = useSpring(x, { damping: 30, stiffness: 220, mass: 0.6 });
+  const springY = useSpring(y, { damping: 30, stiffness: 220, mass: 0.6 });
 
   useEffect(() => {
     if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
@@ -30,7 +31,7 @@ export default function CustomCursor() {
     document.addEventListener('mouseleave', leave);
 
     const bind = () => {
-      document.querySelectorAll('a, button, [role="button"]').forEach(el => {
+      document.querySelectorAll('a, button, [role="button"], input, textarea, select').forEach(el => {
         el.addEventListener('mouseenter', enter);
         el.addEventListener('mouseleave', exit);
       });
@@ -50,9 +51,17 @@ export default function CustomCursor() {
   if (!visible) return null;
 
   return (
-    <motion.div
-      className={`${styles.dot} ${hovered ? styles.active : ''}`}
-      style={{ left: springX, top: springY }}
-    />
+    <>
+      {/* Tiny solid dot moving instantly */}
+      <motion.div
+        className={`${styles.dot} ${hovered ? styles.dotActive : ''}`}
+        style={{ left: x, top: y }}
+      />
+      {/* Large trailing ring with spring damping physics */}
+      <motion.div
+        className={`${styles.ring} ${hovered ? styles.ringActive : ''}`}
+        style={{ left: springX, top: springY }}
+      />
+    </>
   );
 }

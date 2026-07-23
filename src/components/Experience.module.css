@@ -8,12 +8,13 @@
   gap: 24px;
   padding: 40px 0;
   border-bottom: 1px solid var(--border);
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, padding-left 0.3s var(--ease-out);
   align-items: center;
 }
 
 .row:hover {
   background: rgba(255, 255, 255, 0.01);
+  padding-left: 12px;
 }
 
 .left {
@@ -33,6 +34,13 @@
   justify-content: center;
   overflow: hidden;
   padding: 8px;
+  transition: transform 0.3s var(--ease-out), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.row:hover .logoFrame {
+  transform: scale(1.06);
+  border-color: var(--accent);
+  box-shadow: 0 10px 20px -10px rgba(139, 92, 246, 0.3);
 }
 
 .logoFallback {
